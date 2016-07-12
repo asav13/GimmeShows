@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html ng-app="GimmeShows">
+	<head>
+		<title>Gimme Shows</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/src/app.css">
+		<script src="/node_modules/angular/angular.js"></script>
+		<script src="/node_modules/angular-route/angular-route.js"></script>
+		<script src="/node_modules/angular-scroll/angular-scroll.min.js"></script>
+		<script src="/vendor/ui-bootstrap-min.js"></script>
+
+		<script src="/src/app.js"></script>
+
+	</head>
+
+	<body class="App" ng-controller="HomeController">
+
+		<!-- SEARCH JUMBOTRON -->
+		<div class="jumbotron">
+			<div class="container">
+				<div class="row">
+					<div class="page-header">
+						<h2>Gimme shows! <small><br><em>So you'll always have something to watch</em></small></h2>
+					</div>
+					<div class="searchArea text-center">
+						<h1>Search</h1>
+						<form>
+							<label for="searchBox"><h3>Similar to:</h3></label>
+
+							<div class="form-group">
+								<div class="input-group input-group-lg">
+									<div class="icon-addon addon-lg">
+										<input 	type="text" 
+												placeholder="Search for similar shows" 
+												class="form-control" 
+												id="searchBox" 
+												ng-model="searchInput"
+												autofocus>
+
+											<label for="searchBox" class="glyphicon glyphicon-search" rel="tooltip" title="searchBoxIcon"></label>
+									</div>
+										<span class="input-group-btn">
+										<button class="btn btn-default" role="button" type="submit" for="searchBox" ng-click="searchSimilarShows()">Gimme!</button>
+									</span>
+								</div>
+							</div>
+						</form>
+
+						<div ng-show="showNotFound" role="alert">Show not found...</div>
+					</div><!--END of searchArea class-->
+				</div><!--END of search row-->
+			</div><!--END of container-->
+		</div><!--END of jumbotron-->
+
+
+		<div class="container">
+			<div class="row" ng-show="similarShows.length > 0" id="showResults">
+				<div class="resultTitle">
+					<h2>{{similarShows.length}} shows similar to {{inputShow}}:</h2>
+				</div>
+
+					<div ng-repeat="show in similarShows">
+						<div class="show panel panel-default col-lg-2 col-md-2 col-sm-3 col-xs-6"
+							 ng-click="getShowDetails(show.id)"
+							 id="{{show.id}}">
+							<span class="showName">{{show.Name}}</span>
+							<div class="panel-body">
+								<img class="showImage" src="{{show.image}}" width="100"></img>
+								<br><a href="{{show.imdb}}"><small>imdb</small></a>
+							</div>
+						</div>
+					</div>
+			</div> <!--END of search row-->
+
+
+		<div ng-show="detailsOn">
+			<div class="row">
+				<div class="showDetails col-md-6">
+					<span class="glyphicon glyphicon-remove exitButton" ng-click="detailsOn = !detailsOn"></span>
+					<h3 class="showName">{{selectedShow.Name}}</h3>
+					<div class="col-md-8">
+						<div class="summary"><p>{{selectedShow.summary}}</p></div>
+					</div>
+					<div class="col-md-2">
+						<img class="showImage" src="{{selectedShow.image}}" width="200"></img>
+					</div>
+				</div><!--END of showDetails-->
+			</div><!--END of row-->
+		</div><!--END of ng show details on-->
+
+	</div><!--END of container-->
+
+	</body>
+</html>
