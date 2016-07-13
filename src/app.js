@@ -119,7 +119,8 @@ function HomeController($scope, $http, $document) {
 	/* Helper function for setting all kinds of stuff for a single show */
 	function setShowInfo(nr){
 
-		$scope.similarShows[nr].id = "show" + nr; /* HTML element ID */
+		$scope.similarShows[nr].id 		= "show" + nr; /* HTML element ID */
+		$scope.similarShows[nr].isOpen 	= false;
 
 		/* Sending a request to get an image and imdb link */
 		$http({
@@ -192,7 +193,6 @@ function HomeController($scope, $http, $document) {
 		return 1+(--t)*t*t*t*t;
 	}
 
-
 	/* ONLY FOR DEVELOPEMENT */
 
 	function searchShowOnStartup(){
@@ -200,5 +200,5 @@ function HomeController($scope, $http, $document) {
 		$scope.searchSimilarShows();
 	}
 
-	searchShowOnStartup();
+	//searchShowOnStartup();
 })

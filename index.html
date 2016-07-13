@@ -56,7 +56,6 @@
 			</div><!--END of container-->
 		</div><!--END of jumbotron-->
 
-
 		<div class="container">
 			<div class="row" ng-show="similarShows.length > 0" id="showResults">
 				<div class="resultTitle">
@@ -69,30 +68,35 @@
 							 id="{{show.id}}">
 							<span class="showName">{{show.Name}}</span>
 							<div class="panel-body">
-								<img class="showImage" src="{{show.image}}" width="100"></img>
-								<br><a href="{{show.imdb}}"><small>imdb</small></a>
+								<img class="img-responsive showImage" src="{{show.image}}" width="100"></img>
 							</div>
 						</div>
 					</div>
 			</div> <!--END of search row-->
 
-
-		<div ng-show="detailsOn">
-			<div class="row">
-				<div class="showDetails col-md-6">
-					<span class="glyphicon glyphicon-remove exitButton" ng-click="detailsOn = !detailsOn"></span>
-					<h3 class="showName">{{selectedShow.Name}}</h3>
-					<div class="col-md-8">
-						<div class="summary"><p>{{selectedShow.summary}}</p></div>
+		<div ng-show="detailsOn" class="row">
+			<div class="showDetails col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-8 col-sm-offset-1 col-xs-8 col-xs-offset-1">
+				<div class="row">
+					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+						<h3 class="showDetailsName">{{selectedShow.Name}}</h3>
 					</div>
-					<div class="col-md-2">
-						<img class="showImage" src="{{selectedShow.image}}" width="200"></img>
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+						<span class="glyphicon glyphicon-remove exitButton" ng-click="detailsOn = !detailsOn"></span>
 					</div>
-				</div><!--END of showDetails-->
-			</div><!--END of row-->
-		</div><!--END of ng show details on-->
-
+				</div>
+				<div class="row">
+					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 detailsDiv1">
+						<p>{{selectedShow.summary}}</p>
+						<br><a href="{{selectedShow.imdb}}" target="_blank">imdb</a>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+						<img class="showDetailsImage img-responsive" src="{{selectedShow.image}}" width="200"></img>
+					</div>
+				</div>
+			</div><!--END of showDetails class-->
+		</div><!--END of details row-->
+		<hr>
+		<footer><small>Created by: <a href="mailto:asabj88@gmail.com">asabj88@gmail.com</a></small></footer>
 	</div><!--END of container-->
-
 	</body>
 </html>

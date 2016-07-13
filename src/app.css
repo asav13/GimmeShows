@@ -1,6 +1,5 @@
 
 body{
-	/*background: #F6F6F6;*/
 	background-color:  #C5C1C0;
 	color: #0A1312;
 	border-radius: 0;
@@ -9,7 +8,7 @@ body{
 .show{
 	border-radius: 0;
 	border-style: none;
-	height: 275px;
+	height: 240px;
 	width: 175px;
 	margin:2px;
 	padding-top: 10px;
@@ -17,9 +16,6 @@ body{
 	text-overflow: ellipsis;
 	display:block;
 	background: #1A2930;
-	/*background: rgba(26,41,48, 0.9)!important;*/
-	/*color:#F7CE3E;
-	color: #563d7c;*/
 	color: #C5C1C0;
 }
 .showImage{
@@ -42,48 +38,38 @@ body{
 }
 
 .showDetails {
-	position: fixed; /* or absolute */
+	position: fixed;
 	top: 20%;
-	left: 20%;
+	max-height: 450px;
 
-	overflow: hidden;
-	text-overflow:ellipsis;
-	border-radius:  10% 0 10% 0;
-
-	border-style: none;
-
-	text-overflow: ellipsis;
-
-	/*background: rgba(26,41,48, 0.9)!important;*/
 	color: #C5C1C0;
-
-	background:#F7CE3E;
-	background:#1A2930;
-
-	background:#0A1312; /*steal*/
 	background: rgba(10,19,18, 0.8)!important;
-}
 
-.summary {
-	padding-top:10px;
 	overflow: hidden;
-	text-overflow: ellipsis;
+
+	border-radius:  10% 0 10% 0;
+	border-style: none;
 }
 
-.showDetails .showImage{
+.showDetailsImage{
 	display: block;
 	margin-left: auto;
-	
-	padding-right:25px;
+	padding-right: 10px;
 	padding-bottom: 25px;
 }
 
-
-.showDetails .showName{
-	height:50%;
+.showDetailsName {
+	color: #F7CE3E;
 	padding-top:10px;
 	padding-left:20px;
 }
+
+.detailsDiv1 {
+	max-height: 350px;
+	overflow: auto;
+	padding-bottom: 10px;
+}
+
 
 .searchArea {
 	padding-top:20px;
@@ -96,7 +82,7 @@ body{
 }
 
 .exitButton {
-	padding-top: 15px;
+	padding-top:10px;
 	float:right;
 }
 
@@ -112,7 +98,6 @@ body{
 }
 
 
-
 .form-control {
 	background: #C5C1C0;
 }
@@ -121,39 +106,48 @@ body{
 	position: relative; 
 }
 
-a {
+.showDetails a {
 	color:#C5C1C0;
 	text-decoration: underline;
 }
-/*
-yellow F7CE3E
-denim 1A2930
-steal 0A1312
-screen C5C1C0
-boots purple #563d7c
+
+footer {
+	padding-bottom:5px;
+}
+
+/* TODO: less/sass;
+
+	yellow F7CE3E
+	denim 1A2930
+	steal 0A1312
+	screen C5C1C0
+	boots purple #563d7c
 */
 
-/**/
+/* Support glyph and fa icon inside input, 
+	author: http://bootsnipp.com/imjohnlouie
+	source: http://bootsnipp.com/snippets/featured/support-glyph-and-fa-icon-inside-input 
+*/
 .center-block {
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .input-group .icon-addon .form-control {
-    border-radius: 0;
+	border-radius: 0;
 }
 
 .icon-addon {
-    position: relative;
-    color: #555;
-    display: block;
+	position: relative;
+	color: #555;
+	display: block;
 }
 
 .icon-addon:after,
 .icon-addon:before {
-    display: table;
-    content: " ";
+	display: table;
+	content: " ";
 }
 
 .icon-addon:after {
@@ -164,45 +158,45 @@ boots purple #563d7c
 .icon-addon .glyphicon, 
 .icon-addon.addon-md .fa,
 .icon-addon .fa {
-    position: absolute;
-    z-index: 2;
-    left: 10px;
-    font-size: 14px;
-    width: 20px;
-    margin-left: -2.5px;
-    text-align: center;
-    padding: 10px 0;
-    top: 1px
+	position: absolute;
+	z-index: 2;
+	left: 10px;
+	font-size: 14px;
+	width: 20px;
+	margin-left: -2.5px;
+	text-align: center;
+	padding: 10px 0;
+	top: 1px
 }
 
 .icon-addon.addon-lg .form-control {
-    line-height: 1.33;
-    height: 46px;
-    font-size: 18px;
-    padding: 10px 16px 10px 40px;
+	line-height: 1.33;
+	height: 46px;
+	font-size: 18px;
+	padding: 10px 16px 10px 40px;
 }
 
 .icon-addon.addon-lg .fa,
 .icon-addon.addon-lg .glyphicon {
-    font-size: 18px;
-    margin-left: 0;
-    left: 11px;
-    top: 4px;
+	font-size: 18px;
+	margin-left: 0;
+	left: 11px;
+	top: 4px;
 }
 
 .icon-addon.addon-sm .fa,
 .icon-addon.addon-sm .glyphicon {
-    margin-left: 0;
-    font-size: 12px;
-    left: 5px;
-    top: -1px
+	margin-left: 0;
+	font-size: 12px;
+	left: 5px;
+	top: -1px
 }
 
 .icon-addon .form-control:focus + .glyphicon,
 .icon-addon:hover .glyphicon,
 .icon-addon .form-control:focus + .fa,
 .icon-addon:hover .fa {
-    color: #2580db;
+	color: #2580db;
 }
 
 .input-group{
