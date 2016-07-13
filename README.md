@@ -17,7 +17,7 @@ and then run it on a local server for example with <a href="https://www.python.o
 py -m http.server 8080
 ```
 
-then open http://localhost:8080/ in a browser
+then open <a href="http://localhost:8080/"/> in a browser
 
 ##APIs used
 -https://www.tastekid.com/api <br>
