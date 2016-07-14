@@ -1,7 +1,7 @@
 # GimmeShows
 Author: asab88@gmail.com <br>
 Project: Gimme Shows, a pet project for practice<br><br>
-The project is currently up and running on <a href="http://www.asabjork.com">www.asabjork.com</a><br><br>
+The project is currently up and running on <a href="http://www.asabjork.com/gimmeshows">www.asabjork.com/gimmeshows</a><br><br>
 An AngularJS APP that uses API's to fetch TV show suggestions based on what else you watch.<br>
 NOTE that this is a project in progress, not finished :)
 
