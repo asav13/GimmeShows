@@ -204,6 +204,6 @@ function HomeController($scope, $http, $document) {
 		$scope.searchSimilarShows();
 	}
 
-	searchShowOnStartup();
+	//searchShowOnStartup();
 
 })
