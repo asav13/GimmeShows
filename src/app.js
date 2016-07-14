@@ -63,6 +63,10 @@ function HomeController($scope, $http, $document) {
 
 	/* This function gets called when a single show is selected */
 	$scope.getShowDetails = function(id){
+		if($scope.detailsOn){
+			$scope.detailsOn = false;
+			return;
+		}
 
 		$scope.selectedShow 	= $scope.similarShows[id.replace("show","")];
 		$scope.detailsOn 		= true;
@@ -76,7 +80,7 @@ function HomeController($scope, $http, $document) {
 			$scope.selectedShow.summary = cleanHtml(data.summary);
 
 		}, function errorCallback(response) {
-			console.log("ERROR: Error fetching image.");
+			console.log("ERROR: Error fetching from tvmaze.");
 		});
 
 	}
@@ -200,5 +204,6 @@ function HomeController($scope, $http, $document) {
 		$scope.searchSimilarShows();
 	}
 
-//	searchShowOnStartup();
+	searchShowOnStartup();
+
 })

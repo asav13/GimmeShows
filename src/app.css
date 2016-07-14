@@ -3,6 +3,7 @@ body{
 	background-color:  #C5C1C0;
 	color: #0A1312;
 	border-radius: 0;
+	scrollbar-face-color: red;
 }
 
 .show{
@@ -38,6 +39,7 @@ body{
 }
 
 .showDetails {
+	z-index: 2;
 	position: fixed;
 	top: 20%;
 	max-height: 450px;
@@ -119,6 +121,7 @@ footer {
 
 	yellow F7CE3E
 	denim 1A2930
+		rgb(26,41,48)
 	steal 0A1312
 	screen C5C1C0
 	boots purple #563d7c
@@ -201,4 +204,24 @@ footer {
 
 .input-group{
 	background-color:#C5C1C0;
+}
+
+/* Scroll bar */
+::-webkit-scrollbar {
+	width: 15px;
+}
+::-webkit-scrollbar-track {
+	background-color: #1A2930;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #0A1312;
+}
+
+::-webkit-scrollbar-button {
+	background-color: #0A1312;
+}
+
+::-webkit-scrollbar-corner {
+	background-color: #0A1312;
 }
